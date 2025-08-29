@@ -6,7 +6,7 @@
     <groupId>org.operaton.bpm</groupId>
     <artifactId>operaton-parent</artifactId>
     <relativePath>../../parent/pom.xml</relativePath>
-    <version>1.0.0-beta-5-SNAPSHOT</version>
+    <version>1.0.0-rc-1-SNAPSHOT</version>
   </parent>
 
   <artifactId>operaton-core-internal-dependencies</artifactId>
@@ -518,7 +518,7 @@
       <dependency>
         <groupId>org.jboss.ironjacamar</groupId>
         <artifactId>ironjacamar-spec-api</artifactId>
-        <version>1.0.10.Final</version>
+        <version>1.4.35.Final</version>
         <scope>provided</scope>
       </dependency>
 

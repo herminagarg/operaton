@@ -66,7 +66,7 @@ public class BpmPlatformParser1_1 extends AbstractParser {
   }
 
   protected void parseProcessEngines(final XMLExtendedStreamReader reader, final List<ModelNode> operations, final ModelNode parentAddress) throws XMLStreamException, ParserException {
-    List<String> discoveredEngineNames = new ArrayList<String>();
+    List<String> discoveredEngineNames = new ArrayList<>();
 
     while (reader.hasNext() && reader.nextTag() != END_ELEMENT) {
       final Element element = Element.forName(reader.getLocalName());
@@ -94,7 +94,7 @@ public class BpmPlatformParser1_1 extends AbstractParser {
       switch(attribute) {
         case NAME: {
           engineName = rawAttributeText(reader, NAME.getLocalName());
-          if (engineName != null && !engineName.equals("null")) {
+          if (engineName != null && !"null".equals(engineName)) {
             SubsystemAttributeDefinitons.NAME.parseAndSetParameter(engineName, addProcessEngineOp, reader);
           } else {
             throw missingRequiredElement(reader, Collections.singleton(NAME.getLocalName()));
@@ -321,7 +321,7 @@ public class BpmPlatformParser1_1 extends AbstractParser {
       switch(attribute) {
         case NAME: {
           acquisitionName = rawAttributeText(reader, NAME.getLocalName());
-          if (acquisitionName != null && !acquisitionName.equals("null")) {
+          if (acquisitionName != null && !"null".equals(acquisitionName)) {
             SubsystemAttributeDefinitons.NAME.parseAndSetParameter(acquisitionName, addJobAcquisitionOp, reader);
           } else {
             throw missingRequiredElement(reader, Collections.singleton(NAME.getLocalName()));
